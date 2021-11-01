@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.UserBookingPage">
+    <ContentPage.Content>
+        <Frame Margin="10" CornerRadius="10" BorderColor="Blue" VerticalOptions="StartAndExpand">
+            <StackLayout>
+                <Button Text="Открыть аудиторию" TextColor="Black" CornerRadius="10" 
+                        BackgroundColor="Green" Clicked="OnOpenAuditoryButtonClicked"/>
+                <Button Text="Удалить бронирование" TextColor="Black" CornerRadius="10" 
+                        BackgroundColor="Red" Clicked="OnDeleteBookingButtonClicked"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

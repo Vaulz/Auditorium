@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.ErrorPage"
+             Title="Произошла ошибка">
+    <ContentPage.Content>
+        <Frame BorderColor="Crimson" Margin="20, 60, 20, 0" CornerRadius="20" VerticalOptions="StartAndExpand">
+            <Label Text="{Binding Message}" FontSize="20" TextColor="Black" />
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

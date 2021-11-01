@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.RegistrationPage"
+             Title="Регистрация">
+
+    <ContentPage.Content>
+        <Frame BorderColor="RoyalBlue" CornerRadius="20" HasShadow="True" Margin="20, 20, 20, 30" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Логин" FontSize="24" TextColor="Black"/>
+                    <Entry Text="{Binding Login}" FontSize="24"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Пароль" FontSize="24" TextColor="Black"/>
+                    <Entry Text="{Binding Password}" FontSize="24" IsPassword="True" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Имя" FontSize="24" TextColor="Black"/>
+                    <Entry Text="{Binding FirstName}" FontSize="24" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Фамилия" FontSize="24" TextColor="Black"/>
+                    <Entry Text="{Binding LastName}" FontSize="24" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Отчество" FontSize="24" TextColor="Black"/>
+                    <Entry Text="{Binding MiddleName}" FontSize="24" />
+                </StackLayout>
+                <Button Text="Зарегестрироваться" Clicked="OnSaveButtonClicked" BackgroundColor="RoyalBlue"  CornerRadius="10"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.LogInPage"
+             Title="Вход в систему">
+    <ContentPage.Content>
+        <Frame BorderColor="PaleVioletRed" CornerRadius="20" HasShadow="True" Margin="20, 80, 20, 80" VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="Start">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Логин" FontSize="24" TextColor="Black"/>
+                        <Entry Text="{Binding Login}" FontSize="24" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Пароль" FontSize="24" TextColor="Black"/>
+                        <Entry Text="{Binding Password}" FontSize="24" IsPassword = "True"/>
+                    </StackLayout>
+                    <Button Text="Войти" BackgroundColor="PaleVioletRed" Clicked="OnLogInButtonClicked" CornerRadius="10"/>
+                    <Button Text="Войти по отпечатку пальца" BackgroundColor="MediumVioletRed" Clicked="OnFingerPrintButtonClick" CornerRadius="10"/>
+                </StackLayout >
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label Text="Еще не зарегестрированы ?" HorizontalOptions="Center" FontSize="18" TextColor="RoyalBlue"/>
+                    <Button Text="Регистрация" BackgroundColor="RoyalBlue" Clicked="OnRegistrationButtonClicked" 
+                            VerticalOptions="End" CornerRadius="10"/>
+                </StackLayout>
+            </StackLayout >
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Auditorium"
+             xmlns:pages="clr-namespace:Auditorium.Pages"
+             x:Class="Auditorium.Pages.MainPage"
+             Title="Auditorium">
+    <FlyoutItem Title="TabBar" Shell.TabBarIsVisible="False" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Аудитории" IsTabStop="True" ContentTemplate="{DataTemplate pages:AuditoriesPage}"/>
+        <ShellContent Title="Бронирования" IsTabStop="True" ContentTemplate="{DataTemplate pages:UserBookingsPage}" Route="UserBookingsPage"/>
+        <ShellContent Title="Личные данные" IsTabStop="True" ContentTemplate="{DataTemplate pages:UserInfoPage}"/>
+    </FlyoutItem>
+</Shell>

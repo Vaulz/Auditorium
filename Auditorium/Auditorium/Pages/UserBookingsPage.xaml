@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.UserBookingsPage"
+             Title="Ваши бронирования">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <ListView ItemsSource="{Binding UserBookingModels}" HasUnevenRows="True" ItemTapped="OnBookingClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame VerticalOptions="StartAndExpand"
+                                           BorderColor="SlateBlue"
+                                           BackgroundColor="Lavender"
+                                           CornerRadius="10">
+                                        <StackLayout>
+                                            <Label Text="{Binding AuditoryNumber, StringFormat='№{0}'}" 
+                                                   TextColor="Blue" FontSize="18"/>
+                                            <Label Text="{Binding Date}" 
+                                                   TextColor="Black" FontSize="18"/>
+                                            <Label Text="{Binding Time}" 
+                                                   TextColor="Red" FontSize="18"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

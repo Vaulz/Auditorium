@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.UserInfoPage"
+             Title="Личные данные">
+    <ContentPage.Content>
+        <Frame BorderColor="Blue" CornerRadius="10" Margin="10" VerticalOptions="StartAndExpand" BackgroundColor="GhostWhite">
+            <StackLayout>
+                <Frame BorderColor="Red" CornerRadius="10">
+                    <StackLayout>
+                        <Label Text="{Binding LastName}" FontSize="20" TextColor="Black"/>
+                        <Label Text="{Binding FirstName}" FontSize="20" TextColor="Black"/>
+                        <Label Text="{Binding MiddleName}" FontSize="20" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Привязать отпечаток пальца" 
+                        Clicked="OnSaveFingerPrintButtonClicked" 
+                        CornerRadius="10" TextColor="Black"
+                        FontSize="16" BackgroundColor="HotPink"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

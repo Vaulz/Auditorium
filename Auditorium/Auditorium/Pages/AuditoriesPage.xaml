@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Auditorium.Pages.AuditoriesPage"
+             Title="Аудитории">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand" Margin="10">
+                <ListView x:Name="AuditoriesListView" ItemsSource="{Binding AuditoryModels}" ItemTapped="OnAuditorySelect" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Frame VerticalOptions="StartAndExpand"
+                                           BorderColor="SlateBlue"
+                                           BackgroundColor="Lavender"
+                                           CornerRadius="10"
+                                           Margin="5">
+                                        <StackLayout>
+                                            <Label>
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="№ " FontSize="24" TextColor="Blue" />
+                                                        <Span Text="{Binding Number}" FontSize="24" TextColor="Blue" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label>
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Кол-во мест: " FontSize="18" TextColor="Black" />
+                                                        <Span Text="{Binding Capacity}" FontSize="18" TextColor="Red" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label>
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Доп. информация: " FontSize="18" TextColor="Black" />
+                                                        <Span Text="{Binding AdditionalInfo}" FontSize="18"
+                                                              TextColor="Black" />
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

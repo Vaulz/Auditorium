@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Auditorium.Pages.BookingPage"
+             Title="Бронирование аудитории">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame VerticalOptions="StartAndExpand" BorderColor="SlateBlue"
+                       BackgroundColor="Lavender" CornerRadius="10" Margin="5">
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <Label Text="{Binding AuditoryModel.Number, StringFormat='Аудитория № {0}'}" FontSize="18"
+                               TextColor="Blue" />
+                        <Label Text="Выберите дату:" FontSize="14" TextColor="Black" />
+                        <DatePicker x:Name="Date" MinimumDate="{x:Static sys:DateTime.Now}" TextColor="Red" FontSize="14" DateSelected="OnDateSelected"/>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"
+                                     VerticalOptions="FillAndExpand">
+                            <StackLayout>
+                                <Label Text="Выберите время начала:" FontSize="14" TextColor="Black" />
+                                <TimePicker x:Name="StartTime" TextColor="Red" FontSize="14" Time="{Binding TimeStart}"/>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="Выберите время окончания:" FontSize="14" TextColor="Black" />
+                                <TimePicker x:Name="EndTime" TextColor="Red" FontSize="14" Time="{Binding TimeEnd}"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Button Text="Забронировать аудиторию" CornerRadius="10"
+                                BackgroundColor="SlateBlue" FontSize="14" Clicked="OnCreateBookingButtonClicked"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Margin="10">
+                    <Label Text="Текущие бронирования данной аудитории" TextColor="Blue" FontSize="16"/>
+                    <ListView ItemsSource="{Binding BookingModels}" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Frame VerticalOptions="StartAndExpand"
+                                               BorderColor="SlateBlue"
+                                               BackgroundColor="Lavender"
+                                               CornerRadius="10">
+                                            <StackLayout>
+                                                <Label Text="{Binding UserFullName}" 
+                                                       TextColor="Black" FontSize="14"/>
+                                                <Label Text="{Binding Time}" 
+                                                       TextColor="Red" FontSize="14"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
